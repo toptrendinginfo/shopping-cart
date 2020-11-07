@@ -1,3 +1,3 @@
 export default function formatCurrency(num) {
-  return "Rs : " + Number(num.toFixed(0)).toLocaleString() + " ";
+  return "$" + Number(num.toFixed(1)).toLocaleString() + " ";
 }
