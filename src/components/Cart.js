@@ -20,6 +20,7 @@ class Cart extends Component {
   handleInput = (e) => {
     this.setState({ [e.target.name]: e.target.value });
   };
+
   createOrder = (e) => {
     e.preventDefault();
     const order = {
@@ -27,7 +28,7 @@ class Cart extends Component {
       email: this.state.email,
       address: this.state.address,
       cartItems: this.props.cartItems,
-      total: this.props.cartItems.reduce((a, c) => a + c.price * c.count, 0),
+      total: this.props.cartItems.reduce((a, c) => (a + c.price * c.count), 0),
     };
     this.props.createOrder(order);
   };
